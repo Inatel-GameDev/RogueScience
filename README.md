@@ -23,6 +23,8 @@ Todo personagem possui os seguintes:
 * Passiva
 
 ### Tesla
+Passiva: Tesla possui uma barra de energia que carrega com o tempo, os ataques e habilidades consomem a energia para ficarem mais fortes.
+0% a 60% - 61% a 95% - 96% a 100%
 
 ### Eistein
 
@@ -35,4 +37,4 @@ Todo personagem possui os seguintes:
 
 # Unity
 
-UML: 
+UML: https://lucid.app/lucidchart/1b30e553-d1a9-4266-a9ec-ada96b8ee9af/edit?beaconFlowId=15BDA4D45A5A885F&invitationId=inv_6f57fd89-0073-4769-9a8b-d76288149b9d&page=0_0#

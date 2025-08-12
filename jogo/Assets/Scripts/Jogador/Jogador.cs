@@ -2,7 +2,7 @@
 using UnityEngine;
 
 // Classe principal, controla qual estado está rodando e possui as informações gerais do jogador
-public class Jogador : MonoBehaviour, MaquinaDeEstado
+public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 {
     [Header("Atributos")]
     private int _vida;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class JogadorAtivo: Estado
+public abstract class JogadorAtivo: Estado
 {
     [SerializeField] private Jogador jogador;
     private Vector2 _moveInput;
@@ -25,4 +25,9 @@ public class JogadorAtivo: Estado
         // context possui a direção com base na tecla apertada (-1,0 ou 1) de cada eixo
         _moveInput = context.ReadValue<Vector2>();
     }
+
+    public abstract void OnAttackRanged(InputAction.CallbackContext context);
+    public abstract void OnAttackMelee(InputAction.CallbackContext context);
+    public abstract void OnAbilityOne(InputAction.CallbackContext context);
+    public abstract void OnAbilityTwo(InputAction.CallbackContext context);
 }

@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1190391630}
-  - component: {fileID: 1190391631}
+  - component: {fileID: 1190391636}
   - component: {fileID: 1190391634}
   - component: {fileID: 1190391633}
   - component: {fileID: 1190391635}
@@ -200,20 +200,6 @@ Transform:
   - {fileID: 181880228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1190391631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190391629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32fc4133f993945479581b7cc7270b98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  estadoAtivo: {fileID: 1661594306}
-  estadoDesativado: {fileID: 181880229}
 --- !u!50 &1190391633
 Rigidbody2D:
   serializedVersion: 5
@@ -332,6 +318,20 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 3.06
+--- !u!114 &1190391636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190391629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09df4370f2a4025a6496faad7c5ab34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  estadoAtivo: {fileID: 1661594308}
+  estadoDesativado: {fileID: 181880229}
 --- !u!1 &1633788637
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,8 +385,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1661594305}
-  - component: {fileID: 1661594306}
   - component: {fileID: 1661594307}
+  - component: {fileID: 1661594308}
   m_Layer: 0
   m_Name: JogadorAtivo
   m_TagString: Untagged
@@ -409,19 +409,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1190391630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1661594306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661594304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b4188c8340d4610aa3ee8283642e8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jogador: {fileID: 1190391631}
 --- !u!114 &1661594307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +436,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1661594306}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JogadorAtivo, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -540,6 +527,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1661594308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661594304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279c1d1a110e4eae97a72313c07c2663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogador: {fileID: 1190391636}
 --- !u!1 &1838812434
 GameObject:
   m_ObjectHideFlags: 0
