@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class Personagem : MonoBehaviour, MaquinaDeEstado
+public class JogadorDesativado: Estado
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,12 +12,17 @@ public class Personagem : MonoBehaviour, MaquinaDeEstado
         
     }
 
-    public void MudarEstado(Estado novoEstado)
+    public override void Enter()
     {
         throw new System.NotImplementedException();
     }
 
-    public void FixedUpdate()
+    public override void FixedDo()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Exit()
     {
         throw new System.NotImplementedException();
     }
