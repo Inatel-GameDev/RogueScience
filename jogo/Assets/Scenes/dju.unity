@@ -330,7 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09df4370f2a4025a6496faad7c5ab34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  estadoAtivo: {fileID: 1661594308}
+  EstadoAtual: {fileID: 1661594308}
+  EstadoAtivo: {fileID: 1661594308}
   estadoDesativado: {fileID: 181880229}
 --- !u!1 &1633788637
 GameObject:
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1661594308}
         m_TargetAssemblyTypeName: JogadorAtivo, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0

@@ -12,6 +12,7 @@ public abstract class JogadorAtivo: Estado
 
     public override void FixedDo()
     {
+        Debug.Log(jogador.transform.position);
         jogador.Rb.MovePosition(jogador.Rb.position + _moveInput * (jogador.Velocidade * Time.fixedDeltaTime));
     }
     
