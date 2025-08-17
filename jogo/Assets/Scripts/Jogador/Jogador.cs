@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 // Classe principal, controla qual estado está rodando e possui as informações gerais do jogador
@@ -8,6 +9,9 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     private int _vida;
     public float Velocidade { get; } = 10;
     private float _energia;
+    [SerializeField] public float _mouseDistMax;
+    [SerializeField] public float _mouseDistMin;
+    [SerializeField] private GameObject _mouse;
 
     [Header("Estados")]
     public Estado EstadoAtual;
@@ -21,6 +25,7 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>(); 
+        Cursor.visible = false;
     }
     
     void Start()
