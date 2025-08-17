@@ -27,6 +27,18 @@ public abstract class JogadorAtivo: Estado
         _moveInput = context.ReadValue<Vector2>();
     }
 
+    public void OnPause()
+    {
+        if (!jogador.gameManager.isPaused)
+        {
+            jogador.gameManager.Pause();
+        }
+        else
+        {
+            jogador.gameManager.Resume();
+        }
+    }
+
     public abstract void OnAttackRanged(InputAction.CallbackContext context);
     public abstract void OnAttackMelee(InputAction.CallbackContext context);
     public abstract void OnAbilityOne(InputAction.CallbackContext context);

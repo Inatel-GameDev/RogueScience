@@ -13,9 +13,10 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     public Estado EstadoAtual;
     [SerializeField] private Estado EstadoAtivo;
     [SerializeField] private Estado estadoDesativado;
-
+    
     [Header("Componentes")]
     public Rigidbody2D Rb { get; set; }
+    public GameManager gameManager;
 
     private void Awake()
     {
