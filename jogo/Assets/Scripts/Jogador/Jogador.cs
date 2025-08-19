@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 {
     [Header("Atributos")]
-    private int _vida;
+    private float _vida = 100;
     public float Velocidade { get; } = 6;
     private float _energia;
     [SerializeField] public float _mouseDistMax;
@@ -52,5 +52,14 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     public void FixedUpdate()
     {
         EstadoAtual.FixedDo();
+    }
+
+    public void PerdeVida(float dano)
+    {
+        _vida -= dano;
+        if (_vida <= 0)
+        {
+            Debug.Log("Morri");
+        }
     }
 }
