@@ -3,21 +3,32 @@ using UnityEngine;
 public class petdefault : MonoBehaviour
 {
     public GameObject Target;
-    //tentando nao collidir com o player
-    public LayerMask playerLayer;
-    public LayerMask petLayer; 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //tentando nao collidir com o player
-        Physics.IgnoreLayerCollision(playerLayer.value, petLayer.value, true);
-        // 
-    }
+    public float speed = 5f;
+    public float followRadius = 5f;
+    public SpriteRenderer sR;
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 PetPos = new Vector2(Target.transform.position.x +3 , Target.transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, PetPos, 5*Time.deltaTime);
+        if (Target == null) return; // segurança caso o Target não esteja definido
+
+        Vector2 petPos = transform.position;
+        Vector2 targetPos = Target.transform.position;
+
+        float distance = Vector2.Distance(petPos, targetPos);
+        
+        if (targetPos.x > petPos.x)
+        {
+            sR.flipX = true; // olha pra direita
+        }
+        else if (targetPos.x < petPos.x)
+        {
+            sR.flipX = false; // olha pra esquerda
+        }
+
+        // Só anda se estiver fora do raio
+        if (distance > followRadius)
+        {
+            transform.position = Vector2.MoveTowards(petPos, targetPos, speed * Time.deltaTime);
+        }
     }
 }
