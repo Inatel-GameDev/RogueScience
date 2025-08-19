@@ -12,6 +12,7 @@ public abstract class JogadorAtivo: Estado
 
     public override void FixedDo()
     {
+        Debug.Log(jogador.transform.position);
         jogador.Rb.MovePosition(jogador.Rb.position + _moveInput * (jogador.Velocidade * Time.fixedDeltaTime));
     }
     
@@ -24,6 +25,18 @@ public abstract class JogadorAtivo: Estado
     {
         // context possui a direção com base na tecla apertada (-1,0 ou 1) de cada eixo
         _moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnPause()
+    {
+        if (!jogador.gameManager.isPaused)
+        {
+            jogador.gameManager.Pause();
+        }
+        else
+        {
+            jogador.gameManager.Resume();
+        }
     }
 
     public abstract void OnAttackRanged(InputAction.CallbackContext context);
