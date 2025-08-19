@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public abstract class JogadorAtivo: Estado
 {
-    [SerializeField] private Jogador jogador;
+    [SerializeField] public Jogador jogador;
     private Vector2 _moveInput;
     
     public override void Enter()
