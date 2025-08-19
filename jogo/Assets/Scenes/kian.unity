@@ -947,12 +947,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1222671661}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  petLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  speed: 8
+  followRadius: 2
+  rb: {fileID: 1434607054}
 --- !u!1 &2015513615
 GameObject:
   m_ObjectHideFlags: 0
