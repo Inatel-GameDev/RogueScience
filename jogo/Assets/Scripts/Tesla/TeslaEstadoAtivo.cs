@@ -1,17 +1,25 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TeslaEstadoAtivo : JogadorAtivo
 {
+    [Header("Longe")]
     public GameObject AtaqueBasico;
     public float AtaqueBasicoVelocidade = 10f;
+    public float AtaqueBasicoCD = 0.7f;
+    [Header("Perto")]
+    public GameObject AtaquePerto;
+    public float AtaquePertoVelocidade = 1f;
+    // barra passiva 
+    
+    
     public override void OnAttackRanged(InputAction.CallbackContext context)
     {
         if (context.performed) // só dispara quando o botão é pressionado
         {
             Vector2 direcao = (jogador._mouse.transform.position - transform.position).normalized;
-            
             
             float angle = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
             
@@ -24,7 +32,19 @@ public class TeslaEstadoAtivo : JogadorAtivo
 
     public override void OnAttackMelee(InputAction.CallbackContext context)
     {
-        
+        if (context.performed)
+        {
+            if (AtaquePerto.activeSelf)
+                return;
+            StartCoroutine(AtivarAtaque());
+        }
+    }
+
+    private IEnumerator AtivarAtaque()
+    {
+        AtaquePerto.SetActive(true);
+        yield return new WaitForSeconds(AtaquePertoVelocidade); // espera o tempo definido
+        AtaquePerto.SetActive(false);
     }
 
     public override void OnAbilityOne(InputAction.CallbackContext context)
