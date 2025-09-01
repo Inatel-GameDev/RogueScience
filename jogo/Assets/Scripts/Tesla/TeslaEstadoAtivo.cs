@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class TeslaEstadoAtivo : JogadorAtivo
 {
+    [SerializeField] private Tesla tesla;
     [Header("Longe")]
     public GameObject AtaqueBasico;
     public float AtaqueBasicoVelocidade = 10f;
@@ -20,7 +21,6 @@ public class TeslaEstadoAtivo : JogadorAtivo
     
     public override void OnAttackRanged(InputAction.CallbackContext context)
     {
-        
         if (context.performed) // só dispara quando o botão é pressionado
         {
             if(!PodeAtaqueBasico)
@@ -60,17 +60,24 @@ public class TeslaEstadoAtivo : JogadorAtivo
         AtaquePerto.SetActive(false);
     }
 
+    
+    // Dash 
     public override void OnAbilityOne(InputAction.CallbackContext context)
-    {
-        
+    { 
+        // cd do dash
+         jogador.MudarEstado(tesla.estadoDash);
     }
 
+    // Bobina de Tesla
     public override void OnAbilityTwo(InputAction.CallbackContext context)
     {
-        
+        // instanciar o objeto 
+        // o objeto precisa dar dano em área e quando tiver 3 fazer um triangulo (controlador?) 
     }
     
-    // Cooldowns com IEnumerator 
+    
+    
+    // Cooldowns com IEnumerator ----------------------------------------------------- 
 
     public IEnumerator CooldownAtaqueBasico()
     {

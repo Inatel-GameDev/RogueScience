@@ -71,4 +71,9 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     {
         _vida = vidaMax;
     }
+
+    public JogadorAtivo getEstadoAtivo()
+    {
+        return (JogadorAtivo)EstadoAtivo;
+    }
 }
