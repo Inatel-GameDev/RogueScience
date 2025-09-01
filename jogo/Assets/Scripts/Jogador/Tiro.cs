@@ -14,6 +14,7 @@ public class Tiro : MonoBehaviour
         if (other.CompareTag("Inimigo"))
         {
             Debug.Log("Acertou inimigo!");
+            // todo dano no inimigo
             Destroy(gameObject);
         }
     }

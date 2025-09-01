@@ -12577,9 +12577,12 @@ MonoBehaviour:
   jogador: {fileID: 1190391636}
   AtaqueBasico: {fileID: 5875179728003679455, guid: c00f90f8301952e43b0c8cf8e50a0ee5, type: 3}
   AtaqueBasicoVelocidade: 25
-  AtaqueBasicoCD: 10
+  AtaqueBasicoCD: 1
+  PodeAtaqueBasico: 1
   AtaquePerto: {fileID: 183408986}
   AtaquePertoVelocidade: 1
+  AtaquePertoCD: 1.5
+  PodeAtaquePerto: 1
 --- !u!1 &1822996604
 GameObject:
   m_ObjectHideFlags: 0
