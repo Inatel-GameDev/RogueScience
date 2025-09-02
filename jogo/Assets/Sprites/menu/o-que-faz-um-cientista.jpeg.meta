@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      o-que-faz-um-cientista_0: -6477962196699810941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
