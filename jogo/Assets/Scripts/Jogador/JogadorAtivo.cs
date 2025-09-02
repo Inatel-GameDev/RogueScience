@@ -12,7 +12,6 @@ public abstract class JogadorAtivo: Estado
 
     public override void FixedDo()
     {
-        Debug.Log(jogador.transform.position);
         jogador.Rb.MovePosition(jogador.Rb.position + _moveInput * (jogador.Velocidade * Time.fixedDeltaTime));
     }
     
@@ -43,4 +42,9 @@ public abstract class JogadorAtivo: Estado
     public abstract void OnAttackMelee(InputAction.CallbackContext context);
     public abstract void OnAbilityOne(InputAction.CallbackContext context);
     public abstract void OnAbilityTwo(InputAction.CallbackContext context);
+
+    public Vector2 getMoveInput()
+    {
+        return  _moveInput;
+    }
 }

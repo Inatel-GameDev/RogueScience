@@ -1,14 +1,13 @@
 ﻿using System;
-using UnityEditor;
 using UnityEngine;
 
 // Classe principal, controla qual estado está rodando e possui as informações gerais do jogador
 public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 {
     [Header("Atributos")]
-    private float _vida = 100;
+    [SerializeField] private float vidaMax = 100;
+    private float _vida;
     public float Velocidade { get; } = 6;
-    private float _energia;
     [SerializeField] public float _mouseDistMax;
     [SerializeField] public float _mouseDistMin;
     [SerializeField] public GameObject _mouse;
@@ -26,11 +25,11 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     {
         Rb = GetComponent<Rigidbody2D>(); 
         Cursor.visible = false;
+        _vida = vidaMax;
     }
     
     void Start()
     {
-        Debug.Log("start");
         EstadoAtual = EstadoAtivo;
         EstadoAtual.Enter();
     }
@@ -52,6 +51,10 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     public void FixedUpdate()
     {
         EstadoAtual.FixedDo();
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            PerdeVida(100);
+        }
     }
 
     public void PerdeVida(float dano)
@@ -60,6 +63,17 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
         if (_vida <= 0)
         {
             Debug.Log("Morri");
+            gameManager.Respawn(this);
         }
+    }
+
+    public void Reviver()
+    {
+        _vida = vidaMax;
+    }
+
+    public JogadorAtivo getEstadoAtivo()
+    {
+        return (JogadorAtivo)EstadoAtivo;
     }
 }
