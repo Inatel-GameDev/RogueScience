@@ -3,6 +3,8 @@ using UnityEngine;
 public class Tiro : MonoBehaviour
 {
     public float lifetime = 2f;
+    public float dano = 1;
+    public bool tiroInimigo = false;
 
     void Start()
     {
@@ -11,11 +13,23 @@ public class Tiro : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Inimigo"))
+        if (tiroInimigo)
         {
-            Debug.Log("Acertou inimigo!");
-            // todo dano no inimigo
-            Destroy(gameObject);
+            if (other.CompareTag("Player"))
+            {
+                Debug.Log("Acertou jogador!");
+                other.GetComponent<Jogador>().PerdeVida(dano);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Inimigo"))
+            {
+                Debug.Log("Acertou inimigo!");
+                other.GetComponent<Inimigo>().PerdeVida(dano);
+                Destroy(gameObject);
+            }
         }
     }
 }

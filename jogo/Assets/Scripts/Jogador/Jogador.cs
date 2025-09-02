@@ -6,7 +6,7 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 {
     [Header("Atributos")]
     [SerializeField] private float vidaMax = 100;
-    private float _vida;
+    [SerializeField] private float _vida;
     public float Velocidade { get; } = 6;
     [SerializeField] public float _mouseDistMax;
     [SerializeField] public float _mouseDistMin;

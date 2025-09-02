@@ -1,12 +1,7 @@
 using UnityEngine;
 
-public class Inimigo2 : MonoBehaviour
+public class Inimigo2 : Inimigo
 {
-    public GameObject Target;
-    public float speed = 5f;
-    public float visionRadius = 8f; // raio de visão (para "acordar")
-    public SpriteRenderer sR;
-
     private bool alerta = false; // estado inicial: desavisado
 
     void Start()

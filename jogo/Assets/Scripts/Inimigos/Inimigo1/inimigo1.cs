@@ -1,15 +1,11 @@
 using UnityEngine;
 
-public class inimigo1 : MonoBehaviour
+public class inimigo1 : Inimigo
 {
-    public GameObject Target;
-    public float speed = 5f;
     public float followRadius = 5f; // raio de perseguição
-    public float visionRadius = 8f; // raio de visão (para "acordar")
-    public SpriteRenderer sR;
-
     public float tempoInicial = 10f; // segundos
     private float tempoRestante;
+    public GameObject Tiro;
 
     private bool alerta = false; // estado inicial: desavisado
 
@@ -52,16 +48,28 @@ public class inimigo1 : MonoBehaviour
             if (tempoRestante > 0)
             {
                 tempoRestante -= Time.deltaTime;
-                Debug.Log("Tempo Restante: " + Mathf.Ceil(tempoRestante));
+                // Debug.Log("Tempo Restante: " + Mathf.Ceil(tempoRestante));
             }
             else
             {
                 if (distance < followRadius)
                 { 
+                    Vector2 direcao = (Target.transform.position - transform.position).normalized;
+            
+                    float angle = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
+            
+                    GameObject proj = Instantiate(Tiro, transform.position, Quaternion.Euler(new Vector3(0, 0, angle + 90)));
+                    
+                    proj.GetComponent<Tiro>().tiroInimigo = true;
+            
+                    Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
+                    rb.linearVelocity = direcao * 15f;
+                    
                     Debug.Log("POW");
                 }
                 tempoRestante = tempoInicial;
             }
         }
     }
+
 }
