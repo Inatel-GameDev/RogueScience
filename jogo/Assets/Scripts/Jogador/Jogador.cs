@@ -14,6 +14,7 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 
     [Header("Estados")]
     public Estado EstadoAtual;
+
     [SerializeField] private Estado EstadoAtivo;
     [SerializeField] private Estado estadoDesativado;
     
@@ -75,5 +76,9 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     public JogadorAtivo getEstadoAtivo()
     {
         return (JogadorAtivo)EstadoAtivo;
+    }
+    public JogadorDesativado getEstadoDesativado()
+    {
+        return (JogadorDesativado)estadoDesativado;
     }
 }

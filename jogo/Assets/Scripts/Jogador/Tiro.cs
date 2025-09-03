@@ -29,6 +29,14 @@ public class Tiro : MonoBehaviour
                 Debug.Log("Acertou inimigo!");
                 other.GetComponent<Inimigo>().PerdeVida(dano);
                 Destroy(gameObject);
+                
+                GameObject[] inimigos = GameObject.FindGameObjectsWithTag("Inimigo");
+                Debug.Log(inimigos.Length);
+                if (inimigos.Length <= 1)
+                {
+                    GameManager.Instance.FaseFinalizada();
+                    Debug.Log("Todos os inimigos morreram!");
+                }
             }
         }
     }
