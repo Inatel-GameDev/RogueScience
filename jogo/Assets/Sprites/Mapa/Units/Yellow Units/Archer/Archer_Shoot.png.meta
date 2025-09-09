@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Archer_Shoot_0: -3522987849309635434
+      Archer_Shoot_1: 1796539565894229437
+      Archer_Shoot_2: -6164423668334797513
+      Archer_Shoot_3: 8855168420743222378
+      Archer_Shoot_4: 8284549177786691415
+      Archer_Shoot_5: -2689744893154487746
+      Archer_Shoot_6: 500622343033487627
+      Archer_Shoot_7: 7309834836266252465
+      Archer_Shoot_8: -3824891087949102326
+      Archer_Shoot_9: -7300129399355975757
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

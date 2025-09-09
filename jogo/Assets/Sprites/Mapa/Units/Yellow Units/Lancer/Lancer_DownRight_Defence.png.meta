@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lancer_DownRight_Defence_0: -8953913159172069822
+      Lancer_DownRight_Defence_1: 3756642159448234942
+      Lancer_DownRight_Defence_2: 3121258262253506367
+      Lancer_DownRight_Defence_3: 2047591800073256613
+      Lancer_DownRight_Defence_4: -6316008995597495278
+      Lancer_DownRight_Defence_5: -3240944321173662358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
