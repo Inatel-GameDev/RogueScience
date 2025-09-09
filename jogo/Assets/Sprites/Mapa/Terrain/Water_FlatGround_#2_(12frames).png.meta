@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Water_FlatGround_#2_(12frames)_0: 3582330313185521890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Water_Elevation_#3_(12frames)_0: 8297429987464815657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
