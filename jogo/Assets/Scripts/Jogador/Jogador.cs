@@ -6,7 +6,7 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 {
     [Header("Atributos")]
     [SerializeField] private float vidaMax = 100;
-    private float _vida;
+    [SerializeField] private float _vida;
     public float Velocidade { get; } = 6;
     [SerializeField] public float _mouseDistMax;
     [SerializeField] public float _mouseDistMin;
@@ -14,6 +14,7 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 
     [Header("Estados")]
     public Estado EstadoAtual;
+
     [SerializeField] private Estado EstadoAtivo;
     [SerializeField] private Estado estadoDesativado;
     
@@ -75,5 +76,9 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
     public JogadorAtivo getEstadoAtivo()
     {
         return (JogadorAtivo)EstadoAtivo;
+    }
+    public JogadorDesativado getEstadoDesativado()
+    {
+        return (JogadorDesativado)estadoDesativado;
     }
 }
