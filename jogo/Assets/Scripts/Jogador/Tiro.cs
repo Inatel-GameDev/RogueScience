@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Tiro : MonoBehaviour
 {
-    public float lifetime = 2f;
+    public float lifetime ;
     public float dano = 1;
     public bool tiroInimigo = false;
 

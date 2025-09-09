@@ -8,8 +8,10 @@ public class TeslaEstadoDash : Estado
     [SerializeField] private float velocidadeDash;
     [SerializeField] private float tempoDash;
     private Vector2 direcao;
+    [SerializeField]  private Collider2D collider2D;
     public override void Enter()
     {
+        collider2D.enabled = true;
         direcao = jogador.getEstadoAtivo().getMoveInput();
         StartCoroutine(TempoDash());
     }
@@ -23,7 +25,7 @@ public class TeslaEstadoDash : Estado
 
     public override void Exit()
     {
-        
+        collider2D.enabled = false;
     }
 
     public IEnumerator TempoDash()

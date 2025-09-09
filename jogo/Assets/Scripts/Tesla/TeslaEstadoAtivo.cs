@@ -65,7 +65,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
     public override void OnAbilityOne(InputAction.CallbackContext context)
     { 
         // cd do dash
-         jogador.MudarEstado(tesla.estadoDash);
+        jogador.MudarEstado(tesla.estadoDash);
     }
 
     // Bobina de Tesla
