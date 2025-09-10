@@ -45,6 +45,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
             if(!PodeAtaquePerto)
                 return;
             PodeAtaquePerto = false;
+            tesla.Velocidade = 3;
             StartCoroutine(CooldownAtaquePerto());
             
             if (AtaquePerto.activeSelf)
@@ -88,6 +89,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
     {
         yield return new WaitForSeconds(AtaquePertoCD);
         PodeAtaquePerto = true;
+        tesla.Velocidade = 6;
     }
     
 }
