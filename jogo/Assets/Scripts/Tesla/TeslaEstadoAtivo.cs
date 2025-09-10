@@ -6,6 +6,13 @@ using UnityEngine.InputSystem;
 public class TeslaEstadoAtivo : JogadorAtivo
 {
     [SerializeField] private Tesla tesla;
+    [Header("Dash")]
+    public float DashCD = 1f;
+    public bool PodeDash = true;
+    [Header("Bobina")]
+    public GameObject Bobina;
+    public float BobinaCD = 4f;
+    public bool PodeBobina = true;
     [Header("Longe")]
     public GameObject AtaqueBasico;
     public float AtaqueBasicoVelocidade = 10f;
@@ -64,16 +71,24 @@ public class TeslaEstadoAtivo : JogadorAtivo
     
     // Dash 
     public override void OnAbilityOne(InputAction.CallbackContext context)
-    { 
-        // cd do dash
-        jogador.MudarEstado(tesla.estadoDash);
+    {
+        if (PodeDash)
+        {
+            jogador.MudarEstado(tesla.estadoDash);
+            PodeDash = false;
+            StartCoroutine(CooldownDash());
+        }
     }
 
     // Bobina de Tesla
     public override void OnAbilityTwo(InputAction.CallbackContext context)
     {
-        // instanciar o objeto 
-        // o objeto precisa dar dano em área e quando tiver 3 fazer um triangulo (controlador?) 
+        if (PodeBobina)
+        {
+            Instantiate(Bobina, transform.position, Quaternion.identity);
+            PodeBobina = false;
+            StartCoroutine(CooldownBobina());
+        }
     }
     
     
@@ -90,6 +105,17 @@ public class TeslaEstadoAtivo : JogadorAtivo
         yield return new WaitForSeconds(AtaquePertoCD);
         PodeAtaquePerto = true;
         tesla.Velocidade = 6;
+    }
+    
+    public IEnumerator CooldownDash()
+    {
+        yield return new WaitForSeconds(DashCD);
+        PodeDash = true;
+    }
+    public IEnumerator CooldownBobina()
+    {
+        yield return new WaitForSeconds(BobinaCD);
+        PodeBobina = true;
     }
     
 }

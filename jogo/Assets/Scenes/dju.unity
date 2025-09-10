@@ -20242,6 +20242,63 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!1001 &1828480613
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3206208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.1929173
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.061738238
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458266069337724547, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236704524382728621, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+      propertyPath: m_Name
+      value: Bobina
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
 --- !u!1 &1851274467
 GameObject:
   m_ObjectHideFlags: 0
@@ -20274,6 +20331,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogador: {fileID: 1274500267}
   tesla: {fileID: 1274500267}
+  DashCD: 1
+  PodeDash: 1
+  Bobina: {fileID: 3236704524382728621, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
+  BobinaCD: 3
+  PodeBobina: 1
   AtaqueBasico: {fileID: 5875179728003679455, guid: c00f90f8301952e43b0c8cf8e50a0ee5, type: 3}
   AtaqueBasicoVelocidade: 25
   AtaqueBasicoCD: 1
@@ -20344,7 +20406,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1851274468}
+        m_TargetAssemblyTypeName: TeslaEstadoAtivo, Assembly-CSharp
+        m_MethodName: OnAbilityTwo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
@@ -21167,3 +21241,4 @@ SceneRoots:
   - {fileID: 1855408448}
   - {fileID: 2045432547}
   - {fileID: 382646047}
+  - {fileID: 1828480613}
