@@ -1,7 +1,9 @@
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class TeslaEstadoAtivo : JogadorAtivo
 {
@@ -23,9 +25,30 @@ public class TeslaEstadoAtivo : JogadorAtivo
     public float AtaquePertoVelocidade = 1f;
     public float AtaquePertoCD = 1f;
     public bool PodeAtaquePerto = true;
-    // barra passiva 
+    [Header("Perto")]
+    public Image barraPreenchimento; // referência para a Image "Fill"
+    public float tempoMaximo = 10f;   // tempo total para encher
+    private float tempoAtual = 0f;
+
+
+    public override void FixedDo()
+    {
+      base.FixedDo();
+      
+      // Incrementa o tempo
+      tempoAtual += Time.deltaTime;
+      // Calcula porcentagem de preenchimento (0 → 1)
+      float porcentagem = Mathf.Clamp01(tempoAtual / tempoMaximo);
+      // Atualiza a barra
+      barraPreenchimento.fillAmount = porcentagem;
+    }
+
+    public float consumirBarra(float quantidade)
+    {
+        return tempoAtual -= quantidade;
+    }
     
-    
+
     public override void OnAttackRanged(InputAction.CallbackContext context)
     {
         if (context.performed) // só dispara quando o botão é pressionado
@@ -42,6 +65,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
             
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             rb.linearVelocity = direcao * AtaqueBasicoVelocidade;
+            consumirBarra(1.5f);
         }
     }
     
