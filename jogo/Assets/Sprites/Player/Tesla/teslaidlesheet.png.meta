@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 6906f33591771034a9928c2c109b19a0
+guid: dfb4191029fe01b4b8230ba1899e8347
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2735342911457544114
-    second: tesla-front_0
-  - first:
-      213: -667761643174051739
-    second: tesla-front_1
-  - first:
-      213: 3879533749196106594
-    second: tesla-front_2
-  - first:
-      213: -3173601471278484480
-    second: tesla-front_3
-  - first:
-      213: -1523027423024601171
-    second: tesla-front_4
-  - first:
-      213: -8108829065620714050
-    second: tesla-front_5
+      213: 1754930246731867370
+    second: teslaidlesheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tesla-front_0
+      name: teslaidlesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,36 +115,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b74f40b2e3e5f520800000000000000
-      internalID: 2735342911457544114
+      spriteID: ae4aa0ae2c3ca5810800000000000000
+      internalID: 1754930246731867370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tesla-front_1
+      name: teslaidlesheet_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
         height: 42
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 560caffc252abb6f0800000000000000
-      internalID: -667761643174051739
+      spriteID: 2c2df749d9ba24e4aa0e809da8968986
+      internalID: -1612618505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tesla-front_2
+      name: teslaidlesheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -167,21 +152,21 @@ TextureImporter:
         width: 32
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 26b29f6e36fd6d530800000000000000
-      internalID: 3879533749196106594
+      spriteID: 7b0898c6f9f0496458f1ae69643faba8
+      internalID: 811664139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tesla-front_3
+      name: teslaidlesheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -189,59 +174,15 @@ TextureImporter:
         width: 32
         height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 004f9cdb64a15f3d0800000000000000
-      internalID: -3173601471278484480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tesla-front_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da7a07bc0ae1ddae0800000000000000
-      internalID: -1523027423024601171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tesla-front_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ebd805f5de6a77f80800000000000000
-      internalID: -8108829065620714050
+      spriteID: 6b2e0d08139184947a02a1247477acc3
+      internalID: 1637201619
       vertices: []
       indices: 
       edges: []
@@ -250,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ab0155a4d15abe043a469da329621621
+    spriteID: b44a8a7b1d30eca4895724346aa5011b
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +201,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tesla-front_0: 2735342911457544114
-      tesla-front_1: -667761643174051739
-      tesla-front_2: 3879533749196106594
-      tesla-front_3: -3173601471278484480
-      tesla-front_4: -1523027423024601171
-      tesla-front_5: -8108829065620714050
+      teslaidlesheet_0: 1754930246731867370
+      teslaidlesheet_1: -1612618505
+      teslaidlesheet_2: 811664139
+      teslaidlesheet_3: 1637201619
+      teslaidlesheet_4: 242483997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
