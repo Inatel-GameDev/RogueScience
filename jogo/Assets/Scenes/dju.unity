@@ -20452,12 +20452,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogador: {fileID: 1274500267}
-  tesla: {fileID: 1274500267}
   DashCD: 1
   PodeDash: 1
-  Bobina: {fileID: 3236704524382728621, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
-  BobinaCD: 3
-  PodeBobina: 1
+  HabilidadeCD: 4
+  PodeHabilidade: 1
   AtaqueBasico: {fileID: 5875179728003679455, guid: c00f90f8301952e43b0c8cf8e50a0ee5, type: 3}
   AtaqueBasicoVelocidade: 25
   AtaqueBasicoCD: 1
@@ -20466,6 +20464,8 @@ MonoBehaviour:
   AtaquePertoVelocidade: 1
   AtaquePertoCD: 1.5
   PodeAtaquePerto: 1
+  tesla: {fileID: 1274500267}
+  Bobina: {fileID: 3236704524382728621, guid: 02af65a63f282ec4ba9ac5487cd2e842, type: 3}
   barraPreenchimento: {fileID: 443587286}
   tempoMaximo: 10
 --- !u!114 &1851274469
@@ -20533,7 +20533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1851274468}
         m_TargetAssemblyTypeName: TeslaEstadoAtivo, Assembly-CSharp
-        m_MethodName: OnAbilityTwo
+        m_MethodName: OnAbility
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20553,7 +20553,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1851274468}
         m_TargetAssemblyTypeName: TeslaEstadoAtivo, Assembly-CSharp
-        m_MethodName: OnAbilityOne
+        m_MethodName: OnDash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21007,7 +21007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2033609639
 RectTransform:
   m_ObjectHideFlags: 0

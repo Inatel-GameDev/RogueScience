@@ -6,6 +6,26 @@ public abstract class JogadorAtivo: Estado
     [SerializeField] public Jogador jogador;
     private Vector2 _moveInput;
     
+    [Header("Dash")]
+    public float DashCD = 1f;
+    public bool PodeDash = true;
+    [Header("Habilidade")]
+    public float HabilidadeCD = 4f;
+    public bool PodeHabilidade = true;
+    [Header("Longe")]
+    // todo trocar GameObject para Especifico
+    public GameObject AtaqueBasico;
+    public float AtaqueBasicoVelocidade = 10f;
+    public float AtaqueBasicoCD = 0.7f;
+    public bool PodeAtaqueBasico = true;
+    [Header("Perto")]
+    // todo trocar GameObject para Especifico
+    public GameObject AtaquePerto;
+    public float AtaquePertoVelocidade = 1f;
+    public float AtaquePertoCD = 1f;
+    public bool PodeAtaquePerto = true;
+    
+    
     public override void Enter()
     {
     }
@@ -40,8 +60,8 @@ public abstract class JogadorAtivo: Estado
 
     public abstract void OnAttackRanged(InputAction.CallbackContext context);
     public abstract void OnAttackMelee(InputAction.CallbackContext context);
-    public abstract void OnAbilityOne(InputAction.CallbackContext context);
-    public abstract void OnAbilityTwo(InputAction.CallbackContext context);
+    public abstract void OnDash(InputAction.CallbackContext context);
+    public abstract void OnAbility(InputAction.CallbackContext context);
 
     public Vector2 getMoveInput()
     {

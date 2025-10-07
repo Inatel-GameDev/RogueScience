@@ -8,24 +8,9 @@ using UnityEngine.UI;
 public class TeslaEstadoAtivo : JogadorAtivo
 {
     [SerializeField] private Tesla tesla;
-    [Header("Dash")]
-    public float DashCD = 1f;
-    public bool PodeDash = true;
-    [Header("Bobina")]
-    public GameObject Bobina;
-    public float BobinaCD = 4f;
-    public bool PodeBobina = true;
-    [Header("Longe")]
-    public GameObject AtaqueBasico;
-    public float AtaqueBasicoVelocidade = 10f;
-    public float AtaqueBasicoCD = 0.7f;
-    public bool PodeAtaqueBasico = true;
-    [Header("Perto")]
-    public GameObject AtaquePerto;
-    public float AtaquePertoVelocidade = 1f;
-    public float AtaquePertoCD = 1f;
-    public bool PodeAtaquePerto = true;
-    [Header("Perto")]
+    [Header ("Bobina")]
+    [SerializeField] private GameObject Bobina;
+    [Header("Passiva")]
     public Image barraPreenchimento; // referência para a Image "Fill"
     public float tempoMaximo = 10f;   // tempo total para encher
     private float tempoAtual = 0f;
@@ -65,7 +50,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
             
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             rb.linearVelocity = direcao * AtaqueBasicoVelocidade;
-            consumirBarra(1.5f);
+            consumirBarra(5f);
         }
     }
     
@@ -76,6 +61,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
             if(!PodeAtaquePerto)
                 return;
             PodeAtaquePerto = false;
+            consumirBarra(5f);
             tesla.Velocidade = 3;
             StartCoroutine(CooldownAtaquePerto());
             
@@ -94,23 +80,25 @@ public class TeslaEstadoAtivo : JogadorAtivo
 
     
     // Dash 
-    public override void OnAbilityOne(InputAction.CallbackContext context)
+    public override void OnDash(InputAction.CallbackContext context)
     {
         if (PodeDash)
         {
             jogador.MudarEstado(tesla.estadoDash);
             PodeDash = false;
+            consumirBarra(5f);
             StartCoroutine(CooldownDash());
         }
     }
 
     // Bobina de Tesla
-    public override void OnAbilityTwo(InputAction.CallbackContext context)
+    public override void OnAbility(InputAction.CallbackContext context)
     {
-        if (PodeBobina)
+        if (PodeHabilidade)
         {
             Instantiate(Bobina, transform.position, Quaternion.identity);
-            PodeBobina = false;
+            PodeHabilidade = false;
+            consumirBarra(5f);
             StartCoroutine(CooldownBobina());
         }
     }
@@ -138,8 +126,8 @@ public class TeslaEstadoAtivo : JogadorAtivo
     }
     public IEnumerator CooldownBobina()
     {
-        yield return new WaitForSeconds(BobinaCD);
-        PodeBobina = true;
+        yield return new WaitForSeconds(HabilidadeCD);
+        PodeHabilidade = true;
     }
     
 }
