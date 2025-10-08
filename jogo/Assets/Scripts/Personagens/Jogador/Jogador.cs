@@ -60,6 +60,8 @@ public abstract class Jogador : MonoBehaviour, MaquinaDeEstado
 
     public void PerdeVida(float dano)
     {
+        // todo pegar esse audio do jogador ativo, e setar ele no jogadorAtivoEspecifico
+        AudioManager.Instance.PlaySound(AudioLibrary.Instance.teslaSomMachucado);
         _vida -= dano;
         if (_vida <= 0)
         {

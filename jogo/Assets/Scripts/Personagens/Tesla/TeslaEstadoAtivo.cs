@@ -40,6 +40,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
         {
             if(!PodeAtaqueBasico)
                 return;
+            AudioManager.Instance.PlaySound(AudioLibrary.Instance.teslaSomTiro);
             PodeAtaqueBasico = false;
             StartCoroutine(CooldownAtaqueBasico());
             Vector2 direcao = (jogador._mouse.transform.position - transform.position).normalized;
@@ -60,6 +61,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
         {
             if(!PodeAtaquePerto)
                 return;
+            AudioManager.Instance.PlaySound(AudioLibrary.Instance.teslaSomAtaque);
             PodeAtaquePerto = false;
             consumirBarra(5f);
             tesla.Velocidade = 3;
@@ -84,6 +86,7 @@ public class TeslaEstadoAtivo : JogadorAtivo
     {
         if (PodeDash)
         {
+            AudioManager.Instance.PlaySound(AudioLibrary.Instance.teslaSomDash);
             jogador.MudarEstado(tesla.estadoDash);
             PodeDash = false;
             consumirBarra(5f);
