@@ -45,10 +45,16 @@ public class GameManager : MonoBehaviour
     
     public void Resume()
     {
+        // add algo 
+        
+        
         isPaused = false;
         Time.timeScale = 1f;
         menuPause.gameObject.SetActive(false);
         Jogador.MudarEstado(Jogador.getEstadoAtivo());
+        
+        
+        // add aqui 
     }
 
     public void DefinirCheckpoint(Transform checkpoint)
