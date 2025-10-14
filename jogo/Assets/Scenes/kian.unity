@@ -16679,12 +16679,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogador: {fileID: 431224030}
-  tesla: {fileID: 431224030}
   DashCD: 1
   PodeDash: 1
-  Bobina: {fileID: 0}
-  BobinaCD: 4
-  PodeBobina: 1
+  HabilidadeCD: 4
+  PodeHabilidade: 1
   AtaqueBasico: {fileID: 5875179728003679455, guid: c00f90f8301952e43b0c8cf8e50a0ee5, type: 3}
   AtaqueBasicoVelocidade: 25
   AtaqueBasicoCD: 1
@@ -16693,6 +16691,8 @@ MonoBehaviour:
   AtaquePertoVelocidade: 1
   AtaquePertoCD: 1.5
   PodeAtaquePerto: 1
+  tesla: {fileID: 431224030}
+  Bobina: {fileID: 0}
   barraPreenchimento: {fileID: 0}
   tempoMaximo: 10
 --- !u!1 &988233140
