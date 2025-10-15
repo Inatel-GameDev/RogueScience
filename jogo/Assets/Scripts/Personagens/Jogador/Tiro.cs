@@ -18,6 +18,7 @@ public class Tiro : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 Debug.Log("Acertou jogador!");
+                dano = 25;
                 other.GetComponent<Jogador>().PerdeVida(dano);
                 Destroy(gameObject);
             }

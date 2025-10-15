@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public abstract class JogadorAtivo: Estado
+public abstract class JogadorAtivo : Estado
 {
     [SerializeField] public Jogador jogador;
     private Vector2 _moveInput;
-    
+
     [Header("Dash")]
     public float DashCD = 1f;
     public bool PodeDash = true;
@@ -24,8 +27,8 @@ public abstract class JogadorAtivo: Estado
     public float AtaquePertoVelocidade = 1f;
     public float AtaquePertoCD = 1f;
     public bool PodeAtaquePerto = true;
-    
-    
+
+
     public override void Enter()
     {
     }
@@ -34,11 +37,11 @@ public abstract class JogadorAtivo: Estado
     {
         jogador.Rb.MovePosition(jogador.Rb.position + _moveInput * (jogador.Velocidade * Time.fixedDeltaTime));
     }
-    
+
     public override void Exit()
     {
     }
-    
+
     // Captura o input do WASD
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -65,6 +68,27 @@ public abstract class JogadorAtivo: Estado
 
     public Vector2 getMoveInput()
     {
-        return  _moveInput;
+        return _moveInput;
     }
+
+
+    public IEnumerator UIAbilityCD(Image loadImage, float cooldown)
+    {
+        float tempo = 0f;
+        loadImage.fillAmount = 0f;
+        while (tempo < cooldown)
+        {
+            tempo += Time.deltaTime;
+            loadImage.fillAmount = tempo / cooldown;
+            Debug.Log($"Cooldown: {loadImage.fillAmount}");
+            yield return null;
+        }
+
+        loadImage.fillAmount = 1f;
+
+    }
+
+    
+    
+    
 }
