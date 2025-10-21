@@ -1,0 +1,44 @@
+using UnityEngine;
+
+public class Tiro : MonoBehaviour
+{
+    public float lifetime ;
+    public float dano = 1;
+    public bool tiroInimigo = false;
+
+    void Start()
+    {
+        Destroy(gameObject, lifetime); // destrói depois de um tempo
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (tiroInimigo)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Debug.Log("Acertou jogador!");
+                dano = 25;
+                other.GetComponent<Jogador>().PerdeVida(dano);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Inimigo"))
+            {
+                Debug.Log("Acertou inimigo!");
+                other.GetComponent<Inimigo>().PerdeVida(dano);
+                Destroy(gameObject);
+                
+                GameObject[] inimigos = GameObject.FindGameObjectsWithTag("Inimigo");
+                Debug.Log(inimigos.Length);
+                if (inimigos.Length <= 1)
+                {
+                    GameManager.Instance.FaseFinalizada();
+                    Debug.Log("Todos os inimigos morreram!");
+                }
+            }
+        }
+    }
+}

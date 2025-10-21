@@ -16205,6 +16205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMax: 100
   _vida: 0
+  lifeImage: {fileID: 0}
   _mouseDistMax: 4
   _mouseDistMin: 0.5
   _mouse: {fileID: 1806697026}
@@ -16695,6 +16696,9 @@ MonoBehaviour:
   Bobina: {fileID: 0}
   barraPreenchimento: {fileID: 0}
   tempoMaximo: 10
+  dashCooldownImage: {fileID: 0}
+  ataquePertoCooldownImage: {fileID: 0}
+  habilidadeCooldownImage: {fileID: 0}
 --- !u!1 &988233140
 GameObject:
   m_ObjectHideFlags: 0
@@ -18015,6 +18019,7 @@ MonoBehaviour:
   isPaused: 0
   isFinalizado: 0
   menuPause: {fileID: 1542420079}
+  UI: {fileID: 0}
   menuFim: {fileID: 0}
   ultimoCheckpoint: {fileID: 1022513707}
 --- !u!4 &1988331414

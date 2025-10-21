@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Canvas")]
     public Canvas menuPause;
+    public Canvas UI;
     public Canvas menuFim;
 
     [Header("Checkpoint")]
@@ -39,16 +40,24 @@ public class GameManager : MonoBehaviour
         
         isPaused = true;
         Time.timeScale = 0;
+        UI.gameObject.SetActive(false);
         menuPause.gameObject.SetActive(true);
         Jogador.MudarEstado(Jogador.getEstadoDesativado());
     }
     
     public void Resume()
     {
+        // add algo 
+        
+        
         isPaused = false;
         Time.timeScale = 1f;
         menuPause.gameObject.SetActive(false);
+        UI.gameObject.SetActive(true);
         Jogador.MudarEstado(Jogador.getEstadoAtivo());
+        
+        
+        // add aqui 
     }
 
     public void DefinirCheckpoint(Transform checkpoint)
@@ -75,6 +84,7 @@ public class GameManager : MonoBehaviour
     {   
         isFinalizado = true;
         menuFim.gameObject.SetActive(true);
+        UI.gameObject.SetActive(false);
         isPaused = true;
         Time.timeScale = 0;
         Jogador.MudarEstado(Jogador.getEstadoDesativado());
